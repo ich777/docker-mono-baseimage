@@ -6,7 +6,7 @@ RUN export TZ=Europe/Rome && \
 	apt-get update && \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
-	apt-get -y install --no-install-recommends wget locales && \
+	apt-get -y install --no-install-recommends wget gnupg software-properties-common locales && \
 	touch /etc/locale.gen && \
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 	locale-gen && \
@@ -16,6 +16,7 @@ RUN export TZ=Europe/Rome && \
 	tee /etc/apt/sources.list.d/mono-official-stable.list && \
 	apt-get update && \
 	apt-get -y install --no-install-recommends mono-complete && \
+	apt-get -y --purge remove software-properties-common gnupg && \
 	apt-get -y autoremove && \
 	rm -rf /var/lib/apt/lists/*
 ENV LANG=en_US.UTF-8
