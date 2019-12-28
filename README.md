@@ -1,2 +1,1 @@
-# docker-mono-baseimage
-
+Dockerbaseimage based on Debian Buster-slim with mono and wget preinstalled
