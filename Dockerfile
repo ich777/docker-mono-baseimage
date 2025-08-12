@@ -7,7 +7,7 @@ RUN export TZ=Europe/Rome && \
 	apt-get update && \
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
 	echo $TZ > /etc/timezone && \
-	apt-get -y install --no-install-recommends gnupg && \
+	apt-get -y install --no-install-recommends gnupg sqv && \
 	apt-get -y install --reinstall ca-certificates && \
 	mkdir -p /usr/share/keyrings && \
 	gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF && \
