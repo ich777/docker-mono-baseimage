@@ -16,4 +16,4 @@ RUN export TZ=Europe/Rome && \
 	apt-get -o Acquire::AllowInsecureRepositories=true -y --allow-unauthenticated install mono-complete && \
 	apt-get -y --purge remove gnupg && \
 	apt-get -y autoremove && \
-	rm -rf /var/lib/apt/lists/*
+	rm -rf /var/lib/apt/lists/* /etc/apt/sources.list.d/mono-official-stable.list
